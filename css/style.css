@@ -1,0 +1,128 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    text-align: center;
+    
+}
+
+/*navbar*/
+nav ul{
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+    background-color: aqua;
+    
+}
+/*cierre navbar*/
+
+/*apertura de contenido*/
+
+.main-600{
+    background-color:white;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+.main-600 p{
+    text-align: center;
+}
+
+/*cierre de contenido*/
+
+.contenedor{
+    display: grid;
+    height: 120vh;     
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 1fr 0.3fr 2fr;
+    grid-template-areas: "header"
+                         "nav"
+                         "main"
+                         "article"
+                         "footer";
+                         
+                         
+}
+
+header{
+    grid-area: header;
+    background-color:blueviolet;
+    
+}
+
+nav{ 
+    grid-area: nav;   
+      
+}   
+
+
+
+main{
+    grid-area: main;
+    background-color: blue;
+}
+article{
+    grid-area: article;
+    background-color: tan;
+}
+
+footer{
+    grid-area: footer;
+    background-color: green;
+    
+}
+  
+/*MQ*/
+
+
+
+
+
+
+
+@media screen and (min-width: 600px) {
+    .contenedor{          
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 0.5fr 0.2fr 3fr 0.3fr;
+        grid-template-areas: "header header "
+                             "nav nav"
+                             "main article"
+                             "footer footer";
+}
+
+}
+
+@media screen and (min-width: 768px) {
+    .contenedor{         
+        grid-template-columns: 0.2fr 5fr 0.2fr;
+        grid-template-rows: 0.5fr 4fr 0.5fr 5fr;
+        grid-template-areas: "nav header article "
+                             "nav main article "
+                             "nav main article "
+                             "nav footer article";
+                            
+                             
+}
+
+nav ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    position: fixed;  
+    height: 100%;  
+    background-color: aqua;
+    
+    
+}
+footer{
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+article{
+    height: 100%;
+}
+
+}
